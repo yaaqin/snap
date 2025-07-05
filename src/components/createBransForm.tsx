@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import UploadIcon from '../assets/svg/Upload icon.svg'
 import { axiosPublic } from '../libs/instance';
 import { useNavigate } from 'react-router-dom';
+import { useAccount } from 'wagmi';
 
 export default function CreateBransForm() {
     const navigate = useNavigate()
@@ -9,6 +10,8 @@ export default function CreateBransForm() {
     const inputRef = useRef<HTMLInputElement | null>(null)
     const [brandName, setBrandName] = useState("");
     const [description, setDescription] = useState("");
+
+    const { address, isConnected } = useAccount()
 
     const [logo, setLogo] = useState<File | null>(null)
 
@@ -34,53 +37,54 @@ export default function CreateBransForm() {
 
     const handleSubmit = async () => {
         try {
-            if (!brandName || !description || !logo) {
+            if (!isConnected) {
+                alert('Please Connect your wallet first')
+            } else if (!brandName || !description || !logo || !address) {
                 alert("Please fill in all fields and select an image.");
                 return;
+            } else {
+                const formData = new FormData();
+                formData.append('brandName', brandName);
+                formData.append('description', description);
+                formData.append('registrationDate', Date.now().toString());
+                formData.append('logo', logo);
+                formData.append('brandOwner', address);
+    
+                console.log(address)
+    
+                // console.log('Submitting form with:', {
+                //     name: brandName,
+                //     description,
+                //     fileName: logo.name,
+                // });
+    
+                const res = await axiosPublic.post('brand/create', formData);
+                navigate('/')
+                console.log('Response:', res.data);
             }
-
-            const formData = new FormData();
-            formData.append('brandName', brandName);
-            formData.append('description', description);
-            formData.append('registrationDate', Date.now().toString());
-            formData.append('logo', logo);
-
-            // console.log(formData)
-
-            // console.log('Submitting form with:', {
-            //     name: brandName,
-            //     description,
-            //     fileName: logo.name,
-            // });
-
-            const res = await axiosPublic.post('brand/create', formData);
-            navigate('/')
-            console.log('Response:', res.data);
-
-            // alert('Brand successfully uploaded!');
         } catch (error: any) {
+            navigate('/')
             console.error('Upload error:', error.response?.data || error.message);
-            alert('Upload failed. Check console for details.');
         }
     }
 
     return (
         <section className="bg-white max-w-xl mx-auto p-6 md:p-10 rounded-xl border-2 border-blue-300 shadow-sm space-y-6 my-6">
             <div>
-                <label className="block font-semibold text-sm mb-1 text-purple-600">
+                <label className="block font-semibold text-sm mb-1 text-[#0052FF]">
                     Brand Name<span className="text-red-500 ml-1">*</span>
                 </label>
                 <input
                     type="text"
                     onChange={(e) => setBrandName(e.target.value)}
                     placeholder="Enter your Brand Name..."
-                    className="w-full border border-purple-300 rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                    className="w-full border border-purple-300 rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
                 />
             </div>
 
             {/* Brand Logo Upload */}
             <div>
-                <label className="block font-semibold text-sm mb-1 text-purple-600">
+                <label className="block font-semibold text-sm mb-1 text-[#0052FF]">
                     Brand Logo<span className="text-red-500 ml-1">*</span>
                 </label>
                 <div
@@ -94,7 +98,7 @@ export default function CreateBransForm() {
                             <img src={UploadIcon} alt="Upload" className="mx-auto mb-2 w-8 h-8" />
                             <p>
                                 Drag & drop your logo or{' '}
-                                <span className="text-purple-600 font-medium hover:underline">Browse</span>
+                                <span className="text-[#0052FF] font-medium hover:underline">Browse</span>
                             </p>
                             <p className="text-xs text-gray-400 mt-1">
                                 Supported formats: JPEG, PNG, PDF – Up to 10 <span className="font-medium">GB</span>
@@ -113,13 +117,13 @@ export default function CreateBransForm() {
 
             {/* Brand Description */}
             <div>
-                <label className="block font-semibold text-sm mb-1 text-purple-600">
+                <label className="block font-semibold text-sm mb-1 text-[#0052FF]">
                     Brand Description<span className="text-red-500 ml-1">*</span>
                 </label>
                 <textarea
-                onChange={(e) => setDescription(e.target.value)}
+                    onChange={(e) => setDescription(e.target.value)}
                     placeholder="Tell us about your brand, its story, and what makes it unique..."
-                    className="w-full border border-purple-300 rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                    className="w-full border border-purple-300 rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
                     rows={4}
                 />
             </div>
@@ -128,7 +132,7 @@ export default function CreateBransForm() {
             {/* <div className="bg-purple-100 border border-purple-300 rounded-md p-4 flex items-center justify-between">
         <div>
           <p className="font-semibold text-sm text-purple-800">Wallet Connection</p>
-          <p className="text-xs text-purple-600">Your wallet is connected and ready</p>
+          <p className="text-xs text-[#0052FF]">Your wallet is connected and ready</p>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-purple-800 font-mono text-sm">{walletAddress}</span>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import ilustration from '../../assets/Vision--5ec7b8a001d0360016d49847.png'
+import ilustration from '../../assets/img/f8e9f373-79f6-418b-b240-70113a48551f_removalai_preview 1.png'
 import space from '../../assets/freepik--20250704175511oaBz 1.png'
 import city from '../../assets/outline-landmarks-skyline 1.png'
 
@@ -30,7 +30,7 @@ const LandingPage: React.FC = () => {
                         <div className="space-y-8">
                             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                                 Snap is for
-                                <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-[#0052FF] to-[#0052FF] bg-clip-text text-transparent">
                                     {" "}authenticate your streetwear on blockchain
                                 </span>
                             </h1>
@@ -38,15 +38,15 @@ const LandingPage: React.FC = () => {
                                 Lorem neque eget molestie. Consectetur gravida ultrices, 
                                 tellus mauris. Non mauris at lectus augue mauris que elit et.
                             </p> */}
-                            <button onClick={() => navigate(`/series/create`)} className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                            <button onClick={() => navigate(`/series/create`)} className="bg-gradient-to-r from-purple-500 to-[#0052FF] hover:from-[#0052FF] hover:to-purple-700 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                                 Get Started
                             </button>
                         </div>
 
                         {/* Hero Image/Graphic */}
                         {/* <div className="relative">
-                            <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-3xl p-8 backdrop-blur-sm border border-purple-500/30">
-                                <div className="w-full h-96 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center">
+                            <div className="bg-gradient-to-br from-purple-500/20 to-[#0052FF]/20 rounded-3xl p-8 backdrop-blur-sm border border-purple-500/30">
+                                <div className="w-full h-96 bg-gradient-to-br from-[#0052FF] to-[#0052FF] rounded-2xl flex items-center justify-center">
                                     <div className="w-32 h-32 bg-gradient-to-br from-purple-300 to-purple-500 rounded-full animate-pulse"></div>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@ const LandingPage: React.FC = () => {
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold mb-4">
                             HOW SNAP WORKS?
-                            {/* <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+                            {/* <span className="bg-gradient-to-r from-[#0052FF] to-[#0052FF] bg-clip-text text-transparent">
                                 {" "}Creativity
                             </span> */}
                         </h2>
@@ -124,7 +124,7 @@ const LandingPage: React.FC = () => {
                             <h2 className="text-4xl font-bold">
                                 High-Resolution
                                 <br />
-                                <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-[#0052FF] to-[#0052FF] bg-clip-text text-transparent">
                                     Outputs
                                 </span>
                             </h2>
@@ -132,7 +132,7 @@ const LandingPage: React.FC = () => {
                                 Get professional-quality designs with pixel-perfect precision.
                                 Export in multiple formats and resolutions for any use case.
                             </p>
-                            <button className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                            <button className="bg-gradient-to-r from-purple-500 to-[#0052FF] hover:from-[#0052FF] hover:to-purple-700 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                                 Try Now
                             </button>
                         </div>
