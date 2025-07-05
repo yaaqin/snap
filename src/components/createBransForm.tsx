@@ -44,11 +44,11 @@ export default function CreateBransForm() {
                 return;
             } else {
                 const formData = new FormData();
-                formData.append('brandName', brandName);
-                formData.append('description', description);
-                formData.append('registrationDate', Date.now().toString());
+                formData.append('brand_name', brandName);
+                formData.append('wallet', address);
+                formData.append('deskripsi', description);
                 formData.append('logo', logo);
-                formData.append('brandOwner', address);
+                // formData.append('brandOwner', address);
     
                 console.log(address)
     
@@ -58,7 +58,7 @@ export default function CreateBransForm() {
                 //     fileName: logo.name,
                 // });
     
-                const res = await axiosPublic.post('brand/create', formData);
+                const res = await axiosPublic.post('brands', formData);
                 navigate('/')
                 console.log('Response:', res.data);
             }

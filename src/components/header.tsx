@@ -8,9 +8,11 @@ const Header = () => {
   const navigate = useNavigate()
   const { isConnected } = useAccount()
   const { data } = useCheckWhitelist()
-  console.log(data)
   const handleCreateBrand = () => {
     navigate(`/brand/create`)
+  }
+  const handleBrandDetail = () => {
+    navigate(`/brand`)
   }
   return (
     <header className="bg-[#F6F7F9] shadow-md fixed w-full top-0 z-50">
@@ -37,7 +39,7 @@ const Header = () => {
           </section>
           <div className="flex items-center space-x-4">
             {data ? (
-              <button onClick={handleCreateBrand} className={`${isConnected ? '' : 'hidden'} bg-[#0052FF] text-white py-2 px-6 rounded-full hover:bg-[#0052FF] z-50`}>
+              <button onClick={handleBrandDetail} className={`${isConnected ? '' : 'hidden'} bg-[#0052FF] text-white py-2 px-6 rounded-full hover:bg-[#0052FF] z-50`}>
                 Brand
               </button>
             ) : (

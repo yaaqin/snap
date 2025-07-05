@@ -1,4 +1,4 @@
-import toast from 'react-hot-toast'
+// import toast from 'react-hot-toast'
 import axios from 'axios'
 
 const baseURL = import.meta.env.VITE_API_URL
@@ -28,9 +28,9 @@ axiosPublic.interceptors.request.use(
 axiosPublic.interceptors.response.use(
   (response) => response,
   (error) => {
-    const status = error.response?.status
-    const message = error.response?.data?.message || 'Terjadi kesalahan'
-    toast.error(`Error ${status}: ${message}`)
+    // const status = error.response?.status
+    // const message = error.response?.data?.message || 'Terjadi kesalahan'
+    // toast.error(`Error ${status}: ${message}`)
     return Promise.reject(error)
   }
 )

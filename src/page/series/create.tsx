@@ -2,49 +2,64 @@ import React, { useState } from "react";
 import Header from "../../components/header";
 import { axiosPublic } from "../../libs/instance";
 import UploadIcon from '../../assets/svg/Upload icon.svg'
+import { useAccount } from "wagmi";
+import { createSeriesFunction } from "../../hooks/query/useCreateSeries";
 
 export const CreateSeries: React.FC = () => {
-  const [brandName, setBrandName] = useState("");
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const [description, setDescription] = useState("");
-  const [file, setFile] = useState<File | null>(null)
+    const [brandName, setBrandName] = useState("");
+    const [imagePreview, setImagePreview] = useState<string | null>(null);
+    const [description, setDescription] = useState("");
+    const [prodBatch, setProdBatch] = useState("");
+    const [maxSpl, setMaxSpl] = useState(0);
+    const [file, setFile] = useState<File | null>(null)
 
-  const handleSubmit = async () => {
-    try {
-      if (!brandName || !description || !file) {
-        alert("Please fill in all fields and select an image.");
-        return;
-      }
+    const {handleCreateSeries} = createSeriesFunction()
 
-      const formData = new FormData();
-      formData.append('seriesId', brandName);
-      formData.append('maxSupply', description);
-      formData.append('brandOwner', Date.now().toString());
-      formData.append('file', file);
+    const { address } = useAccount()
+    const handleSubmit = async () => {
+        try {
+            if (!address) {
+                alert("Please connect wallet first.");
+                return;
+            }
+            if (!brandName || !description || !file) {
+                alert("Please fill in all fields and select an image.");
+                return;
+            }
 
-      console.log('Submitting form with:', {
-        name: brandName,
-        description,
-        fileName: file.name,
-      });
 
-      const res = await axiosPublic.post('/nft/create', formData);
+            const formData = new FormData();
+            formData.append('series_name', brandName);
+            formData.append('max_supply', maxSpl.toLocaleString());
+            formData.append('prod_batch', prodBatch);
+            formData.append('wallet', address);
+            formData.append('description', description);
+            formData.append('image', file);
 
-      console.log('Response:', res.data);
-      alert('Brand successfully uploaded!');
-    } catch (error: any) {
-      console.error('Upload error:', error.response?.data || error.message);
-      alert('Upload failed. Check console for details.');
-    }
-  };
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selected = e.target.files?.[0];
-    if (selected) {
-      setFile(selected);
-      const previewUrl = URL.createObjectURL(selected);
-      setImagePreview(previewUrl);
-    }
-  };
+            console.log('Submitting form with:', {
+                name: brandName,
+                description,
+                fileName: file.name,
+            });
+
+            const res = await axiosPublic.post('/series', formData);
+
+            console.log('Response:', res.data);
+            handleCreateSeries(res.data.seriesId, maxSpl, res.data.wallet)
+            //   alert('Brand successfully uploaded!');
+        } catch (error: any) {
+            console.error('Upload error:', error.response?.data || error.message);
+            alert('Upload failed. Check console for details.');
+        }
+    };
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const selected = e.target.files?.[0];
+        if (selected) {
+            setFile(selected);
+            const previewUrl = URL.createObjectURL(selected);
+            setImagePreview(previewUrl);
+        }
+    };
 
     return (
         <div className=" bg-[#EBFBFF] min-h-screen">
@@ -184,6 +199,7 @@ export const CreateSeries: React.FC = () => {
                                         <span className="text-red-500 ml-1">*</span>
                                     </label>
                                     <input
+                                        onChange={(e) => setMaxSpl(Number(e.target.value))}
                                         type="number"
                                         placeholder="Enter the Quantity number (e.g. 1, 2, 3)"
                                         className="w-full border border-[#0052FF] rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
@@ -199,6 +215,7 @@ export const CreateSeries: React.FC = () => {
                                         <span className="text-red-500 ml-1">*</span>
                                     </label>
                                     <input
+                                        onChange={(e) => setProdBatch(e.target.value)}
                                         type="number"
                                         placeholder="Enter the batch number (e.g. 1, 2, 3)"
                                         className="w-full border border-[#0052FF] rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"

@@ -4,15 +4,15 @@ import abi from '../../abi/brands.json'
 export const useCheckWhitelist = () => {
   const { address, isConnected } = useAccount()
 
-  // Menggunakan useContractRead dengan pengecekan jika alamat ada
+  const contractAddress = import.meta.env.VITE_CONTRACT_BRANDS;
   const {
     data,
     isLoading,
     isError,
     refetch
   } = useReadContract ({
-    address: '0x8aCF80674385Bc8e7dd91dddA56A8e6464eBe35a', // Alamat kontrak
-    abi, // ABI kontrak
+    address: contractAddress, 
+    abi,
     functionName: 'isVerified',
     args: address ? [address] : undefined, 
   })
@@ -23,6 +23,6 @@ export const useCheckWhitelist = () => {
     isLoading,
     isError,
     refetch,
-    data: data as boolean | undefined, // Tipe data yang dikembalikan
+    data: data as boolean | undefined, 
   }
 }

@@ -39,6 +39,10 @@ export const AppRoutes = createBrowserRouter([
         element: <About/>
     },
     {
+        path: '/brand',
+        element: <Explore/>
+    },
+    {
         path: '/explore',
         element: <Explore/>
     },
