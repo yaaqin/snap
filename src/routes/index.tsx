@@ -3,6 +3,7 @@ import HomePage from "../page/home";
 import Mint from "../page/mint";
 import { CreateBrand } from "../page/brand/create";
 import { CreateSeries } from "../page/series/create";
+import BrandVerify from "../page/brand/verify";
 
 export const AppRoutes = createBrowserRouter([
     {
@@ -12,6 +13,10 @@ export const AppRoutes = createBrowserRouter([
     {
         path: '/brand/create',
         element: <CreateBrand/>
+    },
+    {
+        path: '/brand/verify',
+        element: <BrandVerify/>
     },
     {
         path: '/series/create',

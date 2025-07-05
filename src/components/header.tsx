@@ -5,13 +5,13 @@ import logos from '../../public/SNAP.svg'
 const Header = () => {
   const navigate = useNavigate()
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-md fixed w-full top-0">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <section className="flex gap-8">
-          <div className="flex items-center">
+          <section className="flex gap-8 items-center">
+          <p className="flex items-center">
             <img src={logos} alt=""></img>
-          </div>
+          </p>
           <nav className="hidden md:flex space-x-4">
             <a href="#" className="text-[#BC9BF3] hover:text-[#BC9BF3] text-xl font-semibold">
               About
