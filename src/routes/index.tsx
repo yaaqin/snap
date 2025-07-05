@@ -7,6 +7,7 @@ import BrandVerify from "../page/brand/verify";
 import Explore from "../page/explore";
 import About from "../page/about";
 import Museum from "../page/museum";
+import Collection from "../page/collection";
 
 export const AppRoutes = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ export const AppRoutes = createBrowserRouter([
     {
         path: '/museum',
         element: <Museum/>
+    },
+    {
+        path: '/collection',
+        element: <Collection/>
     },
     {
         path: '/about',
