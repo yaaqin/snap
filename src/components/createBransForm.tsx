@@ -78,7 +78,7 @@ export default function CreateBransForm() {
                     type="text"
                     onChange={(e) => setBrandName(e.target.value)}
                     placeholder="Enter your Brand Name..."
-                    className="w-full border border-purple-300 rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
+                    className="w-full border border-[#0052FF] rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
                 />
             </div>
 
@@ -89,7 +89,7 @@ export default function CreateBransForm() {
                 </label>
                 <div
                     onClick={handleClickBrowse}
-                    className="w-full border-2 border-dashed border-purple-300 rounded-md p-6 text-center text-sm text-gray-600 cursor-pointer hover:bg-purple-50 transition"
+                    className="w-full border-2 border-dashed border-[#0052FF] rounded-md p-6 text-center text-sm text-gray-600 cursor-pointer hover:bg-purple-50 transition"
                 >
                     {previewUrl ? (
                         <img src={previewUrl} alt="Preview" className="mx-auto max-h-32 object-contain" />
@@ -123,19 +123,19 @@ export default function CreateBransForm() {
                 <textarea
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="Tell us about your brand, its story, and what makes it unique..."
-                    className="w-full border border-purple-300 rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
+                    className="w-full border border-[#0052FF] rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
                     rows={4}
                 />
             </div>
 
             {/* Wallet Connection */}
-            {/* <div className="bg-purple-100 border border-purple-300 rounded-md p-4 flex items-center justify-between">
+            {/* <div className="bg-[#0052FF] border border-[#0052FF] rounded-md p-4 flex items-center justify-between">
         <div>
-          <p className="font-semibold text-sm text-purple-800">Wallet Connection</p>
+          <p className="font-semibold text-sm text-[#0052FF]">Wallet Connection</p>
           <p className="text-xs text-[#0052FF]">Your wallet is connected and ready</p>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-purple-800 font-mono text-sm">{walletAddress}</span>
+          <span className="text-[#0052FF] font-mono text-sm">{walletAddress}</span>
           <p>icon</p>
         </div>
       </div> */}
@@ -144,7 +144,7 @@ export default function CreateBransForm() {
             <div className="text-center pt-2">
                 <button
                     onClick={handleSubmit}
-                    className="px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold rounded-full shadow hover:opacity-90 transition"
+                    className="px-6 py-3 bg-gradient-to-r from-[#0052FF] to-[#0052FF] text-white font-semibold rounded-full shadow hover:opacity-90 transition"
                 >
                     Submit for Verification
                 </button>

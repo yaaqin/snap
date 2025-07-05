@@ -49,13 +49,13 @@ export const CreateSeries: React.FC = () => {
     return (
         <div className=" bg-[#EBFBFF] min-h-screen">
             <Header />
-            <section className="max-w-7xl mx-auto px-6 py-8 text-purple-700 pt-20">
+            <section className="max-w-7xl mx-auto px-6 py-8 text-[#0052FF] pt-20">
                 <h2 className="text-2xl font-semibold mb-8">Let’s create your SNAP.</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Upload Artwork Section */}
                     <div>
-                        <div className="border border-purple-300 rounded-3xl p-6 bg-purple-50 shadow-md">
-                            <div className="border border-purple-200 rounded-2xl p-10 flex flex-col items-center justify-center text-center relative">
+                        <div className="border border-[#0052FF] rounded-3xl p-6 bg-purple-50 shadow-md">
+                            <div className="border border-[#0052FF] rounded-2xl p-10 flex flex-col items-center justify-center text-center relative">
                                 {/* Gambar preview (kalau ada) */}
                                 {imagePreview ? (
                                     <img
@@ -67,7 +67,7 @@ export const CreateSeries: React.FC = () => {
                                     <img src={UploadIcon} alt="" ></img>
                                 )}
 
-                                <p className="font-semibold mb-1 text-purple-700">
+                                <p className="font-semibold mb-1 text-[#0052FF]">
                                     {imagePreview ? 'Preview artwork' : 'Drop or upload your artwork here.'}
                                 </p>
                                 <p className="text-xs text-[#0052FF] mb-6">
@@ -86,7 +86,7 @@ export const CreateSeries: React.FC = () => {
                                 {/* Tombol trigger */}
                                 <label
                                     htmlFor="imageUpload"
-                                    className="inline-flex cursor-pointer items-center gap-2 bg-purple-500 hover:bg-[#0052FF] active:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-[#0052FF] text-white text-sm font-bold rounded-full px-6 py-3 shadow-[3px_4px_0_rgba(51,38,131,0.8)]"
+                                    className="inline-flex cursor-pointer items-center gap-2 bg-[#0052FF] hover:bg-[#0052FF] active:bg-[#0052FF] focus:outline-none focus:ring-2 focus:ring-[#0052FF] text-white text-sm font-bold rounded-full px-6 py-3 shadow-[3px_4px_0_rgba(51,38,131,0.8)]"
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -144,9 +144,9 @@ export const CreateSeries: React.FC = () => {
                                 placeholder="Give your Brand a unique title."
                                 value={brandName}
                                 onChange={(e) => setBrandName(e.target.value)}
-                                className="w-full border border-purple-300 rounded-md py-2 px-3 text-purple-500 placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-[#0052FF] focus:border-transparent"
+                                className="w-full border border-[#0052FF] rounded-md py-2 px-3 text-[#0052FF] placeholder-[#0052FF] focus:outline-none focus:ring-2 focus:ring-[#0052FF] focus:border-transparent"
                             />
-                            <div className="text-right text-xs text-purple-500 mt-1">
+                            <div className="text-right text-xs text-[#0052FF] mt-1">
                                 {brandName.length}/150
                             </div>
                         </div>
@@ -165,9 +165,9 @@ export const CreateSeries: React.FC = () => {
                                 placeholder="Brand Deskription."
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
-                                className="w-full border border-purple-300 rounded-md py-2 px-3 text-purple-500 placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-[#0052FF] focus:border-transparent min-h-[120px] resize vertical"
+                                className="w-full border border-[#0052FF] rounded-md py-2 px-3 text-[#0052FF] placeholder-[#0052FF] focus:outline-none focus:ring-2 focus:ring-[#0052FF] focus:border-transparent min-h-[120px] resize vertical"
                             ></textarea>
-                            <div className="text-right text-xs text-purple-500 mt-1">
+                            <div className="text-right text-xs text-[#0052FF] mt-1">
                                 {description.length}/1500
                             </div>
                         </div>
@@ -178,7 +178,7 @@ export const CreateSeries: React.FC = () => {
                                 {/* Total Quantity */}
                                 <div>
                                     <label className="block text-sm font-semibold mb-2">
-                                        <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+                                        <span className="bg-gradient-to-r from-[#0052FF] to-blue-500 bg-clip-text text-transparent">
                                             Total Quantity
                                         </span>
                                         <span className="text-red-500 ml-1">*</span>
@@ -186,14 +186,14 @@ export const CreateSeries: React.FC = () => {
                                     <input
                                         type="number"
                                         placeholder="Enter the Quantity number (e.g. 1, 2, 3)"
-                                        className="w-full border border-purple-300 rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
+                                        className="w-full border border-[#0052FF] rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
                                     />
                                 </div>
 
                                 {/* Production Batch */}
                                 <div>
                                     <label className="block text-sm font-semibold mb-2">
-                                        <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+                                        <span className="bg-gradient-to-r from-[#0052FF] to-blue-500 bg-clip-text text-transparent">
                                             Production Batch
                                         </span>
                                         <span className="text-red-500 ml-1">*</span>
@@ -201,7 +201,7 @@ export const CreateSeries: React.FC = () => {
                                     <input
                                         type="number"
                                         placeholder="Enter the batch number (e.g. 1, 2, 3)"
-                                        className="w-full border border-purple-300 rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
+                                        className="w-full border border-[#0052FF] rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
                                     />
                                 </div>
                             </div>
@@ -210,7 +210,7 @@ export const CreateSeries: React.FC = () => {
                 </div>
 
                 {/* Footer with actions */}
-                <div className="mt-8 border-t border-purple-200 pt-6 flex justify-end gap-12 items-center">
+                <div className="mt-8 border-t border-[#0052FF] pt-6 flex justify-end gap-12 items-center">
                     <button
                         type="button"
                         className="text-[#0052FF] font-semibold hover:underline focus:outline-none"
@@ -224,7 +224,7 @@ export const CreateSeries: React.FC = () => {
 
                     <button
                         onClick={handleSubmit}
-                        className="bg-purple-500 hover:bg-[#0052FF] active:bg-purple-700 text-white font-bold rounded-full px-8 py-3 shadow-[3px_4px_0_rgba(51,38,131,0.8)] focus:outline-none"
+                        className="bg-[#0052FF] hover:bg-[#0052FF] active:bg-[#0052FF] text-white font-bold rounded-full px-8 py-3 shadow-[3px_4px_0_rgba(51,38,131,0.8)] focus:outline-none"
                     >
                         Create SNAP
                     </button>

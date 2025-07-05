@@ -13,35 +13,35 @@ const Header = () => {
     navigate(`/brand/create`)
   }
   return (
-    <header className="bg-white shadow-md fixed w-full top-0 z-50">
+    <header className="bg-[#F6F7F9] shadow-md fixed w-full top-0 z-50">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <section className="flex gap-8 items-center">
             <button onClick={() => navigate('/')} className="flex items-center">
-              <img src={logos} alt=""></img>
+              <img src={logos} alt="icons" className="-mt-4"></img>
             </button>
             <nav className="hidden md:flex space-x-4">
-              <a href="#" className="text-[#BC9BF3] hover:text-[#BC9BF3] text-xl font-semibold">
+              <a href="/about" className="text-[#0052FF] hover:text-[#0052FF] text-xl font-semibold">
                 About
               </a>
-              <a href="#" className="text-[#BC9BF3] hover:text-[#BC9BF3] text-xl font-semibold">
-                Issuers
+              <a href="/museum" className="text-[#0052FF] hover:text-[#0052FF] text-xl font-semibold">
+                Museum
               </a>
-              <a href="#" className="text-[#BC9BF3] hover:text-[#BC9BF3] text-xl font-semibold">
-                Collectors
+              <a href="/collection" className="text-[#0052FF] hover:text-[#0052FF] text-xl font-semibold">
+                Collection
               </a>
-              <a href="#" className="text-[#BC9BF3] hover:text-[#BC9BF3] text-xl font-semibold">
-                Builders
+              <a href="/explore" className="text-[#0052FF] hover:text-[#0052FF] text-xl font-semibold">
+                Explore
               </a>
             </nav>
           </section>
           <div className="flex items-center space-x-4">
             {data ? (
-              <button onClick={handleCreateBrand} className={`${isConnected ? '' : 'hidden'} bg-[#BC9BF3] text-white py-2 px-6 rounded-full hover:bg-purple-500 z-50`}>
+              <button onClick={handleCreateBrand} className={`${isConnected ? '' : 'hidden'} bg-[#0052FF] text-white py-2 px-6 rounded-full hover:bg-[#0052FF] z-50`}>
                 Brand
               </button>
             ) : (
-              <button onClick={handleCreateBrand} className={`${isConnected ? '' : 'hidden'} bg-[#BC9BF3] text-white py-2 px-6 rounded-full hover:bg-purple-500 z-50`}>
+              <button onClick={handleCreateBrand} className={`${isConnected ? '' : 'hidden'} bg-[#0052FF] text-white py-2 px-6 rounded-full hover:bg-[#0052FF] z-50`}>
                 Create a SNAP
               </button>
             )}

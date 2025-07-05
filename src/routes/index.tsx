@@ -4,6 +4,9 @@ import Mint from "../page/mint";
 import { CreateBrand } from "../page/brand/create";
 import { CreateSeries } from "../page/series/create";
 import BrandVerify from "../page/brand/verify";
+import Explore from "../page/explore";
+import About from "../page/about";
+import Museum from "../page/museum";
 
 export const AppRoutes = createBrowserRouter([
     {
@@ -21,6 +24,18 @@ export const AppRoutes = createBrowserRouter([
     {
         path: '/series/create',
         element: <CreateSeries/>
+    },
+    {
+        path: '/museum',
+        element: <Museum/>
+    },
+    {
+        path: '/about',
+        element: <About/>
+    },
+    {
+        path: '/explore',
+        element: <Explore/>
     },
     {
         path: '/mint/:id',

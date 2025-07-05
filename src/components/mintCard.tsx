@@ -43,7 +43,7 @@ export default function MintCard() {
               />
             </div>
             <div className="mt-4 md:mt-0 md:ml-4 flex-grow">
-              <h1 className="text-2xl font-semibold text-purple-700">{data?.data?.uri.name}</h1>
+              <h1 className="text-2xl font-semibold text-[#0052FF]">{data?.data?.uri.name}</h1>
               <p className="mt-1 text-gray-600">id: {data?.data?.series_id}</p>
               <p className="mt-2 text-gray-600">{formatDate(data?.data?.created_at)}</p>
               <p className="mt-2 text-gray-500">{data?.data?.uri.description}</p>
@@ -61,7 +61,7 @@ export default function MintCard() {
               />
             </div>
             <div className="mt-4 md:mt-0 md:ml-4 flex-grow">
-              <h1 className="text-2xl font-semibold text-purple-700">{data?.data?.uri.name}</h1>
+              <h1 className="text-2xl font-semibold text-[#0052FF]">{data?.data?.uri.name}</h1>
               <p className="mt-1 text-gray-600">id: {data?.data?.series_id}</p>
               <p className="mt-2 text-gray-600">{formatDate(data?.data?.created_at)}</p>
               <p className="mt-2 text-gray-500">{data?.data?.uri.description}</p>
@@ -76,7 +76,7 @@ export default function MintCard() {
                 placeholder="Email, ENS or Ethereum address"
                 className="border border-gray-300 rounded-md p-2 mt-2 w-full"
               />
-              <button className="mt-2 bg-[#0052FF] text-white rounded-md p-2 w-full hover:bg-purple-700">
+              <button className="mt-2 bg-[#0052FF] text-white rounded-md p-2 w-full hover:bg-[#0052FF]">
                 Mint now
               </button>
               <p className="mt-2 text-sm text-gray-500">

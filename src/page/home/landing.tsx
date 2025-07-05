@@ -38,16 +38,16 @@ const LandingPage: React.FC = () => {
                                 Lorem neque eget molestie. Consectetur gravida ultrices, 
                                 tellus mauris. Non mauris at lectus augue mauris que elit et.
                             </p> */}
-                            <button onClick={() => navigate(`/series/create`)} className="bg-gradient-to-r from-purple-500 to-[#0052FF] hover:from-[#0052FF] hover:to-purple-700 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                            <button onClick={() => navigate(`/series/create`)} className="bg-gradient-to-r from-[#0052FF] to-[#0052FF] hover:from-[#0052FF] hover:to-[#0052FF] px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                                 Get Started
                             </button>
                         </div>
 
                         {/* Hero Image/Graphic */}
                         {/* <div className="relative">
-                            <div className="bg-gradient-to-br from-purple-500/20 to-[#0052FF]/20 rounded-3xl p-8 backdrop-blur-sm border border-purple-500/30">
+                            <div className="bg-gradient-to-br from-[#0052FF]/20 to-[#0052FF]/20 rounded-3xl p-8 backdrop-blur-sm border border-[#0052FF]/30">
                                 <div className="w-full h-96 bg-gradient-to-br from-[#0052FF] to-[#0052FF] rounded-2xl flex items-center justify-center">
-                                    <div className="w-32 h-32 bg-gradient-to-br from-purple-300 to-purple-500 rounded-full animate-pulse"></div>
+                                    <div className="w-32 h-32 bg-gradient-to-br from-[#0052FF] to-[#0052FF] rounded-full animate-pulse"></div>
                                 </div>
                             </div>
                         </div> */}
@@ -59,11 +59,11 @@ const LandingPage: React.FC = () => {
             {/* minter */}
             <section className='flex flex-col md:flex-row justify-center gap-24 bg-white py-32 items-center'>
                 <div className='flex gap-4 items-center'>
-                    <h3 className='text-4xl font-bold text-[#BC9BF3]'>273428347</h3>
+                    <h3 className='text-4xl font-bold text-[#0052FF]'>273428347</h3>
                     <span>Snap's Minted</span>
                 </div>
                 <div className='flex gap-4 items-center'>
-                    <h3 className='text-4xl font-bold text-[#BC9BF3]'>273428347</h3>
+                    <h3 className='text-4xl font-bold text-[#0052FF]'>273428347</h3>
                     <span>Snap's Minted</span>
                 </div>
             </section>
@@ -132,7 +132,7 @@ const LandingPage: React.FC = () => {
                                 Get professional-quality designs with pixel-perfect precision.
                                 Export in multiple formats and resolutions for any use case.
                             </p>
-                            <button className="bg-gradient-to-r from-purple-500 to-[#0052FF] hover:from-[#0052FF] hover:to-purple-700 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                            <button className="bg-gradient-to-r from-[#0052FF] to-[#0052FF] hover:from-[#0052FF] hover:to-[#0052FF] px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                                 Try Now
                             </button>
                         </div>
@@ -141,14 +141,14 @@ const LandingPage: React.FC = () => {
                         <div className="relative">
                             <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6">
                                 <div className="bg-white rounded-lg p-6 mb-4">
-                                    <div className="h-48 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg mb-4"></div>
+                                    <div className="h-48 bg-gradient-to-br from-[#0052FF] to-[#0052FF] rounded-lg mb-4"></div>
                                     <div className="space-y-2">
                                         <div className="h-4 bg-gray-200 rounded w-3/4"></div>
                                         <div className="h-4 bg-gray-200 rounded w-1/2"></div>
                                     </div>
                                 </div>
                                 <div className="bg-white rounded-lg p-6">
-                                    <div className="h-32 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg mb-4"></div>
+                                    <div className="h-32 bg-gradient-to-br from-[#0052FF] to-[#0052FF] rounded-lg mb-4"></div>
                                     <div className="space-y-2">
                                         <div className="h-3 bg-gray-200 rounded w-2/3"></div>
                                         <div className="h-3 bg-gray-200 rounded w-1/3"></div>
