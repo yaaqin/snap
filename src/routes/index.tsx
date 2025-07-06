@@ -8,6 +8,7 @@ import Explore from "../page/explore";
 import About from "../page/about";
 import Museum from "../page/museum";
 import Collection from "../page/collection";
+import DetailBrand from "../page/brand/detailBrand";
 
 export const AppRoutes = createBrowserRouter([
     {
@@ -40,7 +41,7 @@ export const AppRoutes = createBrowserRouter([
     },
     {
         path: '/brand',
-        element: <Explore/>
+        element: <DetailBrand/>
     },
     {
         path: '/explore',

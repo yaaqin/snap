@@ -1,6 +1,6 @@
-import { useState } from 'react'
 import Header from '../../components/header';
 import Footer from '../../components/footer';
+import { useDetaiBrand } from '../../hooks/query/useDetailBrand';
 
 const sampleSnaps = [
     {
@@ -21,8 +21,10 @@ const sampleSnaps = [
 ];
 
 export default function Collection() {
-    const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+    // const [viewMode, setViewMode] = useState<'grid' |s 'list'>('grid');
 
+        const { data } = useDetaiBrand()
+    
     return (
         <>
             <Header />
@@ -30,19 +32,22 @@ export default function Collection() {
                 {/* Header */}
                 <div className="bg-blue-600 text-white py-6 px-4 md:px-10 relative overflow-hidden">
                     <div className="max-w-6xl mx-auto flex items-center space-x-4">
-                        <img
+                        {/* <img
                             src="/images/avatar.jpg"
                             alt="avatar"
                             className="w-14 h-14 rounded-full border-2 border-white"
-                        />
+                        /> */}
                         <div>
+                            <h5 className='font-semibold text-xl'>
+                                {data?.data.brand_name}
+                            </h5>
                             <p className="text-sm break-all font-mono">
-                                0xA9D3F5C8B7E2AD44E3BC7B8919D117A1A52E6B93
+                                {data?.data.wallet}
                             </p>
-                            <p className="text-xs mt-1">
+                            {/* <p className="text-xs mt-1">
                                 <span className="font-bold">3 SNAPs</span> Collected since{' '}
                                 <span className="font-semibold text-white">14 May 2025</span>
-                            </p>
+                            </p> */}
                         </div>
                     </div>
                 </div>
@@ -56,7 +61,7 @@ export default function Collection() {
                             className="w-full sm:w-60 px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-1 focus:ring-blue-400"
                         />
                     </div>
-                    <div className="flex items-center space-x-3">
+                    {/* <div className="flex items-center space-x-3">
                         <label htmlFor="sort" className="text-sm text-gray-600">
                             order by
                         </label>
@@ -81,7 +86,7 @@ export default function Collection() {
                                 ☰
                             </button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Timeline Section */}
@@ -94,13 +99,6 @@ export default function Collection() {
                             <div key={idx}>
                                 <img src={snap.image} alt="" className='w-32 h-32 rounded-full object-cover border border-gray-500'/>
                             </div>
-                            // <div
-                            //     key={idx}
-                            //     className="flex flex-col items-center overflow-shadow border rounded-full p-4 shrink-0 w-52 hover:shadow"
-                            // >
-                            //     <img src={snap.image} alt={snap.title} className="object-cover" />
-                            //     {/* <p className="text-xs mt-2 text-center text-gray-600">{snap.title}</p> */}
-                            // </div>
                         ))}
                     </div>
                 </div>
