@@ -35,6 +35,7 @@ const handleCreateSeries = async  (seriesId: number, maxSupply: number, brandOwn
       functionName: "createSeries",
       args: [seriesId, BigInt(maxSupply), brandOwner],
     });
+    console.log('snap has created')
     } else {
       console.log('Write function is not defined');
     }

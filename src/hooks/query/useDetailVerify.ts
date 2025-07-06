@@ -1,7 +1,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { FetchDetailVerify } from "../../service/verifyDetail";
-import type { VerifyDetailProps } from "../../model/verifyDetail";
+import type { verifyTest } from "../../model/verify";
 
 export const useDetailVerify = (id: string) => {
     const {
@@ -9,7 +9,7 @@ export const useDetailVerify = (id: string) => {
         isLoading,
         error,
         refetch,
-    } = useQuery<VerifyDetailProps>({
+    } = useQuery<verifyTest>({
         queryKey: ["verify-detail", id],
         queryFn: () => FetchDetailVerify(id),
         enabled: !!id,
