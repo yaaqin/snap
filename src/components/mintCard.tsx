@@ -56,7 +56,10 @@ export default function MintCard() {
   return (
     <>
       {!data ? (
-        <p>NFT Tida Ditemukan</p>
+        <p className="text-center font-semibold text-lg text-gray-800 mt-12">
+        NFT Tidak Ditemukan
+      </p>
+
       ) : data?.data?.collector ? (
         <div className="flex flex-col justify-between md:flex-row bg-white gap-12 p-6 w-full">
           <section className="flex flex-1  shadow-2xl p-6 rounded-2xl justif-between">
