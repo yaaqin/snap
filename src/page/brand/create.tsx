@@ -87,7 +87,7 @@ export const CreateBrand: React.FC = () => {
             <div>
               <button onClick={handleVerif} className="px-8 rounded-full py-2 bg-[#0052FF] capitalize font-bold text-white duration-300 hover:scale-[1.1]">verify your Brand</button>
             </div>
-            <p>metadata</p>
+            {/* <p>metadata</p> */}
             <p className="text-center">{buildBrandMetadata(data.data.uri)}</p>
           </section>
         ) : (

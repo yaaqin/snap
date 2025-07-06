@@ -4,8 +4,10 @@ import { axiosPublic } from "../../libs/instance";
 import UploadIcon from '../../assets/svg/upload.svg'
 import { useAccount } from "wagmi";
 import { createSeriesFunction } from "../../hooks/query/useCreateSeries";
+import { useNavigate } from "react-router-dom";
 
 export const CreateSeries: React.FC = () => {
+    const navigate = useNavigate()
     const [brandName, setBrandName] = useState("");
     const [imagePreview, setImagePreview] = useState<string | null>(null);
     const [description, setDescription] = useState("");
@@ -45,9 +47,11 @@ export const CreateSeries: React.FC = () => {
             const res = await axiosPublic.post('/series', formData);
 
             console.log('Response:', res.data);
+            navigate('/')
             handleCreateSeries(res.data.seriesId, maxSpl, res.data.wallet)
             //   alert('Brand successfully uploaded!');
         } catch (error: any) {
+            navigate('/')
             console.error('Upload error:', error.response?.data || error.message);
             // alert('Upload failed. Check console for details.');
         }
@@ -156,7 +160,7 @@ export const CreateSeries: React.FC = () => {
                                 id="poap-title"
                                 type="text"
                                 maxLength={150}
-                                placeholder="Give your Brand a unique title."
+                                placeholder="Give your Series a unique title."
                                 value={brandName}
                                 onChange={(e) => setBrandName(e.target.value)}
                                 className="w-full bg-white border border-[#0052FF] rounded-md py-2 px-3 text-[#0052FF] placeholder-[#0052FF] focus:outline-none focus:ring-2 focus:ring-[#0052FF] focus:border-transparent"
@@ -177,7 +181,7 @@ export const CreateSeries: React.FC = () => {
                             <textarea
                                 id="poap-description"
                                 maxLength={1500}
-                                placeholder="Brand Deskription."
+                                placeholder="Brand Description."
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
                                 className="w-full bg-white border border-[#0052FF] rounded-md py-2 px-3 text-[#0052FF] placeholder-[#0052FF] focus:outline-none focus:ring-2 focus:ring-[#0052FF] focus:border-transparent min-h-[120px] resize vertical"

@@ -20,7 +20,7 @@ export default function MintCard() {
       await axiosPublic.post(`series/mint`, payload)
         .then((res) => {
           console.log(res)
-          mintSeries(res.data.to, res.data.seriesId, res.data.uri)
+          mintSeries(res.data.collector, res.data.seriesId, JSON.stringify(res.data.uri))
           navigate('/')
         }).catch((err) => {
           console.log(err)
@@ -63,13 +63,13 @@ export default function MintCard() {
             <div className="flex-shrink-0">
               <img
                 className="h-24 md:h-48 w-24 md:w-48 rounded-xl"
-                src={data?.data?.logo}
+                src={data?.data.uri.image}
                 alt="Get a Series Logo"
               />
             </div>
             <div className="mt-4 md:mt-0 md:ml-4 flex-grow">
-              <h1 className="text-2xl font-semibold text-[#0052FF]">{data?.data?.uri.name}</h1>
-              <p className="mt-1 text-gray-600">id: {data?.data?._id}</p>
+              <h1 className="text-2xl font-semibold text-[#0052FF] capitalize">{data?.data?.series_name}</h1>
+              <p className="mt-1 text-gray-600">wallet: {data?.data?.wallet}</p>
               <p className="mt-2 text-gray-600">{formatDate(data?.data?.createdAt)}</p>
               <p className="mt-2 text-gray-500">{data?.data?.uri.description}</p>
             </div>
