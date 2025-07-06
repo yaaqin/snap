@@ -10,8 +10,8 @@ export const products = Array.from({ length: 9 }, (_, i) => ({
     date: i % 3 === 0 ? "June 28, 2025" : i % 3 === 1 ? "May 18, 2025" : "July 02, 2025",
     collections: i % 3 === 0 ? "8 Collectors" : i % 3 === 1 ? "34 Collectors" : "4 Collectors",
     image: i % 3 === 0
-        ? "https://i.pinimg.com/736x/94/d8/ea/94d8ea6875f4e704f2866b3bd9656e10.jpg"
+        ? "https://i.pinimg.com/736x/f8/7a/2b/f87a2bb6daa81a0424ad3775b49310ad.jpg"
         : i % 3 === 1
-            ? "https://i.pinimg.com/736x/9e/52/36/9e52360c4ec0ac3c6ad323342349f543.jpg"
-            : "https://i.pinimg.com/736x/81/8f/33/818f33e3bf78e1d5d6becce47b989897.jpg",
+            ? "https://i.pinimg.com/736x/d4/96/df/d496df36be2e491c9c8f2ef3568b8fc7.jpg"
+            : "https://i.pinimg.com/736x/9f/95/89/9f9589e74c377ad2f36c559f6b59deff.jpg",
 }));

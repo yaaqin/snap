@@ -4,17 +4,17 @@ import Footer from '../../components/footer';
 
 const sampleSnaps = [
     {
-        image: 'https://i.pinimg.com/736x/1c/6c/b2/1c6cb222fa98b6c2075cbc4810b47b56.jpg',
+        image: 'https://i.pinimg.com/736x/8d/d8/78/8dd87825c789b6aa9661e3886b56756c.jpg',
         title: 'Couple Bnw',
         date: 'June 2025',
     },
     {
-        image: 'https://i.pinimg.com/736x/13/89/b0/1389b05ce2c6eab489f79091081bbb03.jpg',
+        image: 'https://i.pinimg.com/736x/23/79/5c/23795ca2fa417cf4d99115608daddac5.jpg',
         title: 'Pink Holiday',
         date: 'June 2025',
     },
     {
-        image: 'https://i.pinimg.com/736x/4a/a7/67/4aa767733a33bd79b0928289c2e42251.jpg',
+        image: 'https://i.pinimg.com/736x/16/57/e8/1657e884ef7c45ce838b2e26a04ad7ac.jpg',
         title: 'American Rider',
         date: 'June 2025',
     },
