@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "../../components/header";
 import { axiosPublic } from "../../libs/instance";
-import UploadIcon from '../../assets/svg/Upload icon.svg'
+import UploadIcon from '../../assets/svg/upload.svg'
 import { useAccount } from "wagmi";
 import { createSeriesFunction } from "../../hooks/query/useCreateSeries";
 
@@ -49,7 +49,7 @@ export const CreateSeries: React.FC = () => {
             //   alert('Brand successfully uploaded!');
         } catch (error: any) {
             console.error('Upload error:', error.response?.data || error.message);
-            alert('Upload failed. Check console for details.');
+            // alert('Upload failed. Check console for details.');
         }
     };
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -69,7 +69,7 @@ export const CreateSeries: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Upload Artwork Section */}
                     <div>
-                        <div className="border border-[#0052FF] rounded-3xl p-6 bg-purple-50 shadow-md">
+                        <div className="border border-[#0052FF] rounded-3xl bg-white p-6 shadow-md">
                             <div className="border border-[#0052FF] rounded-2xl p-10 flex flex-col items-center justify-center text-center relative">
                                 {/* Gambar preview (kalau ada) */}
                                 {imagePreview ? (
@@ -159,7 +159,7 @@ export const CreateSeries: React.FC = () => {
                                 placeholder="Give your Brand a unique title."
                                 value={brandName}
                                 onChange={(e) => setBrandName(e.target.value)}
-                                className="w-full border border-[#0052FF] rounded-md py-2 px-3 text-[#0052FF] placeholder-[#0052FF] focus:outline-none focus:ring-2 focus:ring-[#0052FF] focus:border-transparent"
+                                className="w-full bg-white border border-[#0052FF] rounded-md py-2 px-3 text-[#0052FF] placeholder-[#0052FF] focus:outline-none focus:ring-2 focus:ring-[#0052FF] focus:border-transparent"
                             />
                             <div className="text-right text-xs text-[#0052FF] mt-1">
                                 {brandName.length}/150
@@ -180,7 +180,7 @@ export const CreateSeries: React.FC = () => {
                                 placeholder="Brand Deskription."
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
-                                className="w-full border border-[#0052FF] rounded-md py-2 px-3 text-[#0052FF] placeholder-[#0052FF] focus:outline-none focus:ring-2 focus:ring-[#0052FF] focus:border-transparent min-h-[120px] resize vertical"
+                                className="w-full bg-white border border-[#0052FF] rounded-md py-2 px-3 text-[#0052FF] placeholder-[#0052FF] focus:outline-none focus:ring-2 focus:ring-[#0052FF] focus:border-transparent min-h-[120px] resize vertical"
                             ></textarea>
                             <div className="text-right text-xs text-[#0052FF] mt-1">
                                 {description.length}/1500
@@ -202,7 +202,7 @@ export const CreateSeries: React.FC = () => {
                                         onChange={(e) => setMaxSpl(Number(e.target.value))}
                                         type="number"
                                         placeholder="Enter the Quantity number (e.g. 1, 2, 3)"
-                                        className="w-full border border-[#0052FF] rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
+                                        className="w-full bg-white border border-[#0052FF] rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
                                     />
                                 </div>
 
@@ -218,7 +218,7 @@ export const CreateSeries: React.FC = () => {
                                         onChange={(e) => setProdBatch(e.target.value)}
                                         type="number"
                                         placeholder="Enter the batch number (e.g. 1, 2, 3)"
-                                        className="w-full border border-[#0052FF] rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
+                                        className="w-full bg-white border border-[#0052FF] rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0052FF]"
                                     />
                                 </div>
                             </div>
@@ -228,7 +228,7 @@ export const CreateSeries: React.FC = () => {
 
                 {/* Footer with actions */}
                 <div className="mt-8 border-t border-[#0052FF] pt-6 flex justify-end gap-12 items-center">
-                    <button
+                    {/* <button
                         type="button"
                         className="text-[#0052FF] font-semibold hover:underline focus:outline-none"
                         onClick={() => {
@@ -237,7 +237,7 @@ export const CreateSeries: React.FC = () => {
                         }}
                     >
                         Cancel
-                    </button>
+                    </button> */}
 
                     <button
                         onClick={handleSubmit}
