@@ -23,18 +23,18 @@ const Header = () => {
               <img src={logos} alt="icons" className="-mt-4"></img>
             </button>
             <nav className="hidden md:flex space-x-4">
-              <a href="/about" className="text-[#0052FF] hover:text-[#0052FF] text-xl font-semibold">
+              <button onClick={() => navigate('/about')} className="text-[#0052FF] hover:text-[#0052FF] text-xl font-semibold">
                 About
-              </a>
-              <a href="/museum" className="text-[#0052FF] hover:text-[#0052FF] text-xl font-semibold">
+              </button>
+              <button onClick={() => navigate('/museum')} className="text-[#0052FF] hover:text-[#0052FF] text-xl font-semibold">
                 Museum
-              </a>
-              <a href="/collection" className="text-[#0052FF] hover:text-[#0052FF] text-xl font-semibold">
+              </button>
+              <button onClick={() => navigate('/collection')} className="text-[#0052FF] hover:text-[#0052FF] text-xl font-semibold">
                 Collection
-              </a>
-              <a href="/explore" className="text-[#0052FF] hover:text-[#0052FF] text-xl font-semibold">
+              </button>
+              <button onClick={() => navigate('/explore')} className="text-[#0052FF] hover:text-[#0052FF] text-xl font-semibold">
                 Explore
-              </a>
+              </button>
             </nav>
           </section>
           <div className="flex items-center space-x-4">
