@@ -13,7 +13,7 @@ export const createSeriesFunction = () => {
 
       const [txHash, setTxHash] = useState<`0x${string}` | null>(null);
 
-
+  console.log(txHash)
   // Mengambil data dari useWriteContract untuk memanggil fungsi kontrak
   const { writeContract } = useWriteContract({
     mutation: {
