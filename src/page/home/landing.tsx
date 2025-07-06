@@ -3,17 +3,30 @@ import { useNavigate } from 'react-router-dom';
 import ilustration from '../../assets/img/f8e9f373-79f6-418b-b240-70113a48551f_removalai_preview 1.png'
 import space from '../../assets/freepik--20250704175511oaBz 1.png'
 import city from '../../assets/outline-landmarks-skyline 1.png'
+import icon1 from '../../assets/svg/icon1.svg'
+import icon2 from '../../assets/svg/icon2.svg'
+import icon3 from '../../assets/svg/icon3.svg'
+import icon4 from '../../assets/svg/icon4.svg'
+import icon5 from '../../assets/svg/icon5.svg'
 
-const CardWorks = () => {
+interface CardWorksState {
+    title: string
+    desc: string
+    icon: React.ReactNode;
+}
+const CardWorks = ({
+    title,
+    desc,
+    icon
+}: CardWorksState) => {
     return (
-        <div className="w-[290px] rounded-2xl bg-gradient-to-b from-[#F5F6FF] to-[#DCCEFF] shadow-md p-6 text-center space-y-3">
-            <div className="w-10 h-10 mx-auto flex items-center justify-center bg-white rounded-full shadow">
-                <p>icon</p>
-                {/* <LucideTag className="text-[#6B4EFF]" size={20} /> */}
+        <div className="w-[290px] rounded-2xl bg-white shadow-md p-6 text-center space-y-3">
+            <div className="w-10 h-10 mx-auto flex items-center justify-center bg-[#0052FF] rounded-full shadow">
+                {icon}
             </div>
-            <h3 className="font-semibold text-lg text-black">Attach and Distribute</h3>
+            <h3 className="font-semibold text-lg text-black">{title}</h3>
             <p className="text-sm text-gray-600">
-                Each product gets a scannable QR code linked to its NFT. Print and stick it on your goods.
+                {desc}
             </p>
         </div>
     )
@@ -38,7 +51,7 @@ const LandingPage: React.FC = () => {
                                 Lorem neque eget molestie. Consectetur gravida ultrices, 
                                 tellus mauris. Non mauris at lectus augue mauris que elit et.
                             </p> */}
-                            <button onClick={() => navigate(`/series/create`)} className="bg-gradient-to-r from-[#0052FF] to-[#0052FF] hover:from-[#0052FF] hover:to-[#0052FF] px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                            <button onClick={() => navigate(`/series/create`)} className="bg-gradient-to-r text-white from-[#0052FF] to-[#0052FF] hover:from-[#0052FF] hover:to-[#0052FF] px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                                 Get Started
                             </button>
                         </div>
@@ -86,11 +99,11 @@ const LandingPage: React.FC = () => {
                     </div>
 
                     <div className='flex flex-wrap justify-center gap-12 z-50'>
-                        <CardWorks />
-                        <CardWorks />
-                        <CardWorks />
-                        <CardWorks />
-                        <CardWorks />
+                        <CardWorks title={'Register Your Brand'} desc={'Set up your fashion label in minutes. Get verified and start protecting your originals.'} icon={<img src={icon1} alt=''></img>} />
+                        <CardWorks title={'Upload Your Product'} desc={'Add your limited-edition tees, hoodies, or sneakers complete with product details and images.'} icon={<img src={icon2} alt=''></img>}/>
+                        <CardWorks title={'Generate NFT'} desc={'Snap automatically mints a unique NFT for each item, certified proof of authenticity on-chain.'} icon={<img src={icon3} alt=''></img>}/>
+                        <CardWorks title={'Attach and Distribute'} desc={'Set up your fashion label in minutes. Get verified and start protecting your originals.'} icon={<img src={icon4} alt=''></img>}/>
+                        <CardWorks title={'Customer Claims'} desc={'Buyers scan the QR and claim their NFT — proof they own the real thing. Instant, secure, and permanent.'} icon={<img src={icon5} alt=''></img>}/>
                     </div>
                 </div>
             </section>
@@ -116,7 +129,7 @@ const LandingPage: React.FC = () => {
                             What People Are Saying
                         </h2>
                         <p className="text-gray-400 max-w-2xl mx-auto">
-                           We provide support for more than  7K+ Businesses.
+                            We provide support for more than  7K+ Businesses.
                         </p>
                     </div>
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
